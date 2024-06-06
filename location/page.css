@@ -1,17 +1,15 @@
 body {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   color: white;
 }
 
 section {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 
 .main--title {
@@ -41,11 +39,9 @@ section {
 
 .h6 {
   color: black;
-
 }
 
 .bohol--container {
-  position: sticky;
   height: 100vh;
   width: 100%;
   background-image: url(/COMPETITION/img/bohol--big.jpg);
@@ -53,10 +49,10 @@ section {
   background-size: cover;
   padding: 0;
   margin: 0;
-  scroll-snap-type: start;
+
 }
+
 .mayon--container {
-  position: sticky;
   height: 100vh;
   width: 100%;
   background-image: url(/COMPETITION/img/mayon--big.jpg);
@@ -64,10 +60,10 @@ section {
   background-size: cover;
   padding: 0;
   margin: 0;
-  scroll-snap-type: start;
+
 }
+
 .banaue--container {
-  position: fixed;
   height: 100vh;
   width: 100%;
   background-image: url(/COMPETITION/img/riceterreces--big.jpg);
@@ -75,10 +71,11 @@ section {
   background-size: cover;
   padding: 0;
   margin: 0;
-  scroll-snap-type: start;
 }
+
 .apo--container {
-  position: sticky;
+
+
   height: 100vh;
   width: 100%;
   background-image: url(/COMPETITION/img/whangOd--big.jpg);
@@ -86,10 +83,11 @@ section {
   background-size: cover;
   padding: 0;
   margin: 0;
-  scroll-snap-type: start;
+
 }
+
 .siargao--container {
-  position: sticky;
+
   height: 100vh;
   width: 100%;
   background-image: url(/COMPETITION/img/siargao--big.jpg);
@@ -99,11 +97,14 @@ section {
   margin: 0;
 }
 
+
 .title {
   transform: translateY(60%);
   text-align: center;
   align-items: center;
+
 }
+
 .title h6 {
   font-size: 35px;
   font-weight: lighter;

@@ -2,10 +2,10 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  scroll-snap-type: y mandatory;
 }
+
 body::-webkit-scrollbar {
-  display: none !important; 
+  display: none !important;
 }
 
 section {
@@ -138,12 +138,13 @@ div.ex3 h2 {
 .image-container {
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 .image-container img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 2s ease;
   height: 100%;
 }
 .image-container::after {
@@ -153,9 +154,9 @@ div.ex3 h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.474);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.7s ease;
 }
 .image-container:hover::after {
   opacity: 1;
@@ -175,26 +176,30 @@ div.ex3 h2 {
   padding: 10px 20px;
   cursor: pointer;
   z-index: 999;
+  transition: 3s;
 }
 .image-container:hover .btn {
   display: block;
-  background-color: rgba(254, 187, 128, 0.808);
-  color: black;
+  background-color: rgb(206, 182, 21);
+  color: rgb(255, 255, 255);
 }
 .image-title {
   position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  top: 0;
   color: white;
   font-weight: bold;
-  z-index: 1000;
-  font-size: 22px;
+  font-size: 34px;
+  text-align: center;
+  left: 20%;
+  vertical-align: middle;
+  display: inline-block;
+  top: 80%;
 }
 .modal-content {
   background-color: rgba(0, 0, 0, 0.8);
   border: none;
   border-radius: 0;
+  width: 100%;
 }
 .modal-header {
   border: none;
@@ -213,11 +218,12 @@ div.ex3 h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-fullscreen {
-  width: 100vw;
+  width: 100%;
   max-width: none;
   margin: 0;
 }
@@ -227,57 +233,7 @@ iframe {
   height: 90%;
   display: block;
 }
-/*Experience Page*/
-.experience--page {
-  position: relative;
-  padding: 50px;
-  margin-top: 5%;
-  height: 85%;
-  scroll-snap-align: start;
-}
 
-.experience--title {
-  color: black;
-  margin-bottom: 60px;
-}
-.experience--title h1 {
-  color: black;
-  font-weight: bolder;
-  font-size: 90px;
-  margin-bottom: 50px;
-}
-.experience--title p {
-  color: black;
-  font-size: 20px;
-}
-
-.experience--page .row {
-  margin-bottom: 50px;
-}
-.card {
-  border: none;
-  box-shadow: 10px 10px 5px rgba(178, 175, 175, 0.2034823);
-  transition: transform 0.2s;
-  background: rgb(223, 223, 240);
-  height: fit-content;
-}
-.card-text {
-  height: 89px;
-  text-align: start;
-  font-size: 16px;
-}
-
-.card img {
-  height: 200px;
-  width: 286px;
-}
-.card:hover {
-  transform: scale(1.06);
-}
-.card-title {
-  font-weight: bold;
-  margin-bottom: 16px;
-}
 
 /* Food Page */
 .food--page {
@@ -317,34 +273,6 @@ iframe {
   list-style: none;
 }
 
-.wrapper i {
-  top: 50%;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  position: absolute;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-}
-
-.wrapper i:active {
-  transform: translateY(-50%) scale(0.85);
-}
-
-.wrapper i:first-child {
-  left: -22px;
-}
-
-.wrapper i:last-child {
-  right: -22px;
-}
-
 .wrapper .carousel {
   display: grid;
   grid-auto-flow: column;
@@ -354,18 +282,19 @@ iframe {
   gap: 10px;
   border-radius: 8px;
   scroll-behavior: smooth;
-  scrollbar-width: none;
   margin-bottom: 50px;
 }
 
 .carousel::-webkit-scrollbar {
-  background-color: rgb(0, 0, 0) 12;
   border-radius: 10px;
+  width: 3px;
+  height: 7px;
 }
 .carousel::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 10px;
-  max-width: 10px;
+  width: 3px;
+  height: 7px;
 }
 
 .carousel.dragging {
@@ -431,6 +360,60 @@ iframe {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/*Experience Page*/
+.experience--page {
+  position: relative;
+  padding: 50px;
+  margin-top: 5%;
+  height: 85%;
+  scroll-snap-align: start;
+}
+
+.experience--title {
+  color: black;
+  margin-bottom: 60px;
+}
+.experience--title h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 90px;
+  margin-bottom: 50px;
+}
+.experience--title p {
+  color: black;
+  font-size: 20px;
+}
+
+.experience--page .row {
+  margin-bottom: 50px;
+}
+.card {
+  border: none;
+  box-shadow: 10px 10px 5px rgba(178, 175, 175, 0.2034823);
+  transition: transform 0.2s;
+  background: rgb(223, 223, 240);
+  height: fit-content;
+}
+.card-text {
+  height: 89px;
+  text-align: start;
+  font-size: 16px;
+}
+
+.card img {
+  height: 125%;
+  width: 100%;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1.06);
+}
+.card-title {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
 
 /* Transportation Page */
 .transportation--page {

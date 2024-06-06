@@ -23,6 +23,7 @@ window.addEventListener("scroll", () => {
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
 let isDragging = false,
   isAutoPlay = true,
@@ -68,42 +69,40 @@ const dragStop = () => {
   isDragging = false;
   carousel.classList.remove("dragging");
 };
-const sections = document.querySelectorAll("section");
-let isScrolling = false;
-
-// Function to handle scroll
-function scrollToSection() {
-  isScrolling = true;
-  const currentScroll = window.scrollY;
-
-  let targetSection = sections[0];
-  let minDistance = Math.abs(currentScroll - targetSection.offsetTop);
-
-  // Find the section closest to the current scroll position
-  sections.forEach((section) => {
-    const distance = Math.abs(currentScroll - section.offsetTop);
-    if (distance < minDistance) {
-      minDistance = distance;
-      targetSection = section;
-    }
-  });
-
-  // Scroll to the target section
-  window.scrollTo({
-    top: targetSection.offsetTop,
-    behavior: "smooth",
-  });
-
-  // Reset scrolling flag after a short delay
-  setTimeout(() => {
-    isScrolling = false;
-  }, 100);
-}
-
-// Event listener for scroll
-window.addEventListener("scroll", () => {
-  if (!isScrolling) {
-    scrollToSection();
+const infiniteScroll = () => {
+  // If the carousel is at the beginning, scroll to the end
+  if (carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
   }
-});
+  // If the carousel is at the end, scroll to the beginning
+  else if (
+    Math.ceil(carousel.scrollLeft) ===
+    carousel.scrollWidth - carousel.offsetWidth
+  ) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
+  // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+  clearTimeout(timeoutId);
+  if (!wrapper.matches(":hover")) autoPlay();
+};
+const autoPlay = () => {
+  if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+  // Autoplay the carousel after every 2500 ms
+  timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
+};
+autoPlay();
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
 
+// Customs Script
+$(document).ready(function () {
+  $(this).scrollTop(0);
+});
