@@ -1,0 +1,130 @@
+body {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.main--title {
+  position: fixed;
+  text-align: center;
+  color: black;
+  margin-bottom: 0;
+}
+
+.first {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: -40px;
+}
+
+.second {
+  font-size: 128px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: -40px;
+}
+
+.third {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.h6 {
+  color: black;
+
+}
+
+.bohol--container {
+  position: sticky;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/COMPETITION/img/bohol--big.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: start;
+}
+.mayon--container {
+  position: sticky;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/COMPETITION/img/mayon--big.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: start;
+}
+.banaue--container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/COMPETITION/img/riceterreces--big.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: start;
+}
+.apo--container {
+  position: sticky;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/COMPETITION/img/whangOd--big.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: start;
+}
+.siargao--container {
+  position: sticky;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/COMPETITION/img/siargao--big.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  transform: translateY(60%);
+  text-align: center;
+  align-items: center;
+}
+.title h6 {
+  font-size: 35px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.title h1 {
+  font-size: 128px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title h5 {
+  margin-top: 0;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.description {
+  margin-top: 107px;
+  font-size: 20px;
+  font-weight: bold;
+}
