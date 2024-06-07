@@ -25,6 +25,8 @@ section {
   align-items: center;
   width: 100%;
   padding: 15px;
+
+  transition: top 0.3s ease-in-out;
 }
 
 .logo--text {
