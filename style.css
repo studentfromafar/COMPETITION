@@ -82,6 +82,15 @@ section {
   margin-bottom: 30px;
 }
 
+.moveFromBottom {
+  animation-name: moveFromBottom;
+}
+@keyframes moveFromBottom {
+  from {
+    transform: translateY(1500px);
+  }
+}
+
 /* Culture Page */
 .culture--page {
   height: 70vh;
